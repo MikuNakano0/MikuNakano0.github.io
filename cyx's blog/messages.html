@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <link rel="stylesheet" href="./css/messages.css">
+    <style>
+        body{
+            height: 100%;
+            margin-bottom:50px;
+        }
+
+        .container{
+            display: flex;
+            margin-left: 200px;
+        }
+
+        .message_box{
+            width: 85%;
+            margin-top: 50px;
+            padding: 5px;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            border-radius: 5px;
+        }
+
+        input[type="text"],
+        textarea{
+            margin: 5px 10px;
+            outline: none;
+            background-color: #efefef;
+            border: 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        input[type="text"]{
+            width: 50%;
+            margin-bottom: 15px;
+        }
+
+        textarea{
+            resize: none;
+            width: 85%;
+        }
+
+        .message_header{
+            margin: 15px 20px;
+            font-size: 27px;
+            font-weight: 600;
+        }
+
+        button{
+            margin: 12px 0 0 10px;
+            border: 0;
+            color:#fff;
+            background-color:#2e9dc9;
+            padding: 12px 20px 12px 20px;
+            transition: all 0.2s ease;
+            border-radius: 5px;
+        }
+
+        button:hover{
+            background-color: #28256b;
+        }
+
+        button.close{
+            background-color:#28256b;
+        }
+
+        input[type="text"]:disabled
+        textarea:disabled{
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        h4{
+            margin: 10px 30px;
+            text-transform: capitalize;
+        }
+
+        span.date{
+            font-size: 12px;
+            font-weight: 300;
+            float: right;
+            margin-right: 10px;
+        }
+
+        hr{
+            border: 0;
+            height: 0;
+            border-top: 1px solid rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .message_box p{
+            margin: 0 30px 15px;
+            font-weight: 300;
+            color: #333;
+            background: #eee;
+            padding: 1rem 3rem;
+            word-wrap: break-word;
+        }
+
+        #cyx{color:#2099c8; font-size:x-large; font-family:Segoe Script;}
+        .nav{
+            height: 70px;                                                                                                                                                        
+            background-color: white;
+        }
+        .ullist li{
+            float: left;
+            height: 40px;
+            width: 246px;
+            line-height: 40px;
+            text-align: center;
+        }
+        .ullist a{
+            color: #000;
+            display: block;
+            text-decoration: none;
+        }
+        .ullist{           
+            margin-left: 150px;
+        }
+        .ullist a:hover{
+            background: #d9d9d9;
+        }
+    </style>
+</head>
+<body>
+    <div class="a1">
+        <iframe frameborder="no" border="0" marginwidth="0" class="music" width="330" height=86 src="http://music.163.com/outchain/player?type=2&id=1961524200&auto=1&height=66"></iframe>
+    </div>
+    <div class="mao1"><img src="./img/mao1.jpg"></div>
+    <div class="mao2"><img src="./img/mao2.jpg"></div>
+    <div class="nav">
+        <ul class="ullist">
+			<li id="cyx"><a href="index.html">Yixiang Chen<a></li>
+			<li><a href="articles.html">Articles<a></li>
+			<li><a href="photos.html">Photos<a></li>
+			<li><a href="messages.html">messages<a></li>
+			<li><a href="https://www.bilibili.com/video/BV1GJ411x7h7?t=0" target="_blank">Good Luck<a></li>
+		</ul>
+    </div>
+    
+    <div class="container">
+        <div class="message_box">
+            <button class="close">远方传来风笛</button>
+            <div class="message_form">
+                <div class="message_header">留言板</div>
+                <div>
+                    <input  type="text" id="name" placeholder="输入您的姓名...">
+                </div>
+                <div>
+                    <textarea id="message" cols="30" rows="3" placeholder="请输入您的留言..."></textarea>
+                </div>
+                <button id="btn_post">留言</button>
+            </div>
+            <div>
+                <h4 class="message_header1">留言列表</h4>
+                <div id="messages">
+                    <!-- <hr>
+                    <h4>
+                        <span>姓名</span>
+                        <span class="date">日期</span>
+                    </h4>
+                    <p>留言内容</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const message =[
+            {
+                name:"Libra",
+                message:"曾沿着雪路浪游，为何为好事泪流，谁能凭爱意要富士山私有。",
+                time:"Wed Sep 26 2023 19:33:54 GMT+0800 (中国标准时间)",
+            },
+        ];
+        const messagebox = document.querySelector('#messages');
+        const nameinput = document.querySelector('#name');
+        const messageinput = document.querySelector('#message');
+        const btnsubmit = document.querySelector('#btn_post');
+        const btnclose = document.querySelector('.close');
+
+        rendermessages();
+
+        btnsubmit.onclick = function(){
+            let namestr=nameinput.value.replace(/<(\/?\w+)>/g,"&lt;$1&gt;");
+            let messagestr=messageinput.value.replace(/<(\/?\w+)>/g,"&lt;$1&gt;");
+            message.unshift({
+                name:namestr,
+                message:messagestr,
+                time:new Date(),
+            })
+            rendermessages();
+        }
+
+        
+        function rendermessages(){
+            messagebox.innerHTML='';
+        message.forEach((item)=>{
+            console.log(item);
+            messagebox.insertAdjacentHTML('beforeend',`
+        <hr>
+                    <h4>
+                        <span>${item.name}</span>
+                        <span class="date">${item.time}</span>
+                    </h4>
+                    <p>${item.message}</p>
+        `)
+        })
+        console.log(messages);
+    }
+        
+    </script>
+</body>
+
+</html>
