@@ -1,0 +1,283 @@
+body {
+    margin: 0;padding: 0;
+    padding-bottom: 9em;
+    background-image: url(../img/one.jpg) ;
+    background-size: cover;
+    background-attachment: fixed;
+    display:block;
+    position: relative;
+    min-width: 1200px;
+    height: 2000px;
+    justify-content: center;
+
+}
+
+div{
+    display: block;
+}
+
+.header1{
+    position: relative;
+    border-bottom: 1px solid #f2f2f3;
+    margin-left: auto;
+    margin-right:auto;
+    clear: both;
+    padding: 1em 1em;
+    background-color: #f2f2f2;
+    height: 40px;
+    padding-left: 15em;
+    padding-right: 15em;
+}
+
+.ullist{
+    list-style: none;
+    
+    margin: 0;
+    padding: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.nav{
+    text-decoration: none;
+    min-width: 1200px;
+    display:block;
+}
+
+.a1{
+    position: fixed;
+    float: left;
+    bottom: 3em;
+}
+
+.mao1{
+    position: relative;
+    float: left;
+    width: 140px;
+}
+.mao2{
+    position: relative;
+    float: right;
+    width: 140px;;
+}
+
+.head_title{
+    max-width: 20%;
+    height: auto;
+}
+
+.img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.wrapper{
+    width: 1200px;
+    margin: 0  auto;
+}
+
+#main{
+    max-width: 1200px;
+    margin-left:auto;
+    margin-right: auto;
+    clear: both;
+    margin-top: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 1500px;
+}
+
+img {
+    max-width: 100%;
+    width: auto\9;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic
+}
+
+.sidebar {
+    width: 16%;
+    float: left;
+    margin-right: 1.6949152542%;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius:0%;
+    position: sticky;
+    top:3em;
+}
+
+.page {
+    width: 65%;
+    height: auto;
+    float:right;
+    margin-right: 0;
+    padding-left: 4.2372881356%;
+    padding-right: 4.9491525424%;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius:8cqb;
+}
+.page_inner-wrap {
+    clear: both;
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0
+}
+
+.urls-wrapper{
+    margin-left: 2em;
+    text-decoration: none;
+}
+
+.urls-wrapper a{
+    color: #000;
+    text-decoration: none;
+}
+
+.page_title {
+    margin-top: 0;
+    line-height: 1
+}
+
+.heimu, .heimu a, a .heimu, .heimu a.new {
+    background-color: #252525;
+    color: #252525;
+    text-shadow: none;
+}
+.heimu:hover, .heimu:active,
+.heimu:hover .heimu, .heimu:active .heimu {
+    color: white !important;
+}
+.heimu:hover a, a:hover .heimu,
+.heimu:active a, a:active .heimu {
+   color: lightblue !important;
+}
+.heimu:hover .new, .heimu .new:hover, .new:hover .heimu,
+.heimu:active .new, .heimu .new:active, .new:active .heimu {
+   color: #BA0000 !important;
+}
+
+/*阅读更多：https://zh.moegirl.org/MediaWiki:Mobile.css 本文引自萌娘百科(https://zh.moegirl.org)，文字内容默认使用《知识共享 署名-非商业性使用-相同方式共享 3.0》协议。*/
+
+
+.page_footer {
+    clear: both;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    clear: both;
+    bottom: 0em;
+    height: 100px;
+    margin-top: 3em;
+    color: #9ba1a6;
+    -webkit-animation: intro 0.3s both;
+    animation: intro 0.3s both;
+    -webkit-animation-delay: 0.45s;
+    animation-delay: 0.45s;
+    background-color: rgba(255, 255, 255, 0);
+    
+}
+
+.page_footer footer{
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    max-width: 100%;
+    padding: 0 1em 2em;
+    text-align: center;
+    font-size: xx-large;
+    color:#39c5bb ;
+    font-family: 'dyh';
+}
+
+.one{
+    max-width: fit-content;
+    height: 250px;
+}
+
+.two{
+    max-width: fit-content;
+    height: 250px;
+}
+
+.three{
+    max-width: fit-content;
+    height: 400px;
+}
+
+.four{
+    max-width: fit-content;
+    height: 400px;
+}
+
+.five{
+    min-width: fit-content;
+    height: 500px;
+}
+
+.para1{
+    float:left;
+    max-width: 600px;
+}
+
+.para2{
+    float:right;
+    max-width :600px; 
+}
+
+.para3{
+    float: left;
+    max-width: 550px;
+}
+
+.para4{
+    float: right;
+    max-width:550px ;
+}
+
+.para5{
+    float: left;
+    max-width: 500px;
+}
+
+.neko1{
+    float:right;
+    width:100%;
+    max-width: 150px;
+    margin-left: 1em;
+}
+
+.miku{
+    float: left;
+    max-width: 150px;
+    margin-right: 1em;
+}
+
+.fuzhong{
+    float: right;
+    max-width: 200px;
+    margin-left: 1em;
+}
+
+.wuhu{
+    float: left;
+    max-width: 200px;
+    margin-right: 1em;
+}
+
+.chengdian{
+    float: right;
+    max-width:250px ;
+}
+
+.page_inner-wrap img {        
+    transition: all 1s;
+}
+
+.page_inner-wrap img:hover {
+    transform: scale(1.5,1.5);
+    z-index: 1;
+}
